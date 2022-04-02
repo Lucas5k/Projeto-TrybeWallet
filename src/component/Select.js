@@ -22,7 +22,7 @@ class Select extends Component {
           value={ value }
         >
           {
-            options.map((option, index) => (
+            options && options.map((option, index) => (
               <option key={ index }>{ option }</option>
             ))
           }

@@ -3,6 +3,8 @@ export const SUBMIT_INFORMATIONS = 'SUBMIT_INFORMATIONS';
 export const PROMISE_CURRENCIES = 'PROMISE_CURRENCIES';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const RESPONSE_ERROR = 'RESPONSE_ERROR';
+export const ALLEXPENSES = 'ALLEXPENSES';
+// export const SUBMIT_FULLEXPENSES = 'SUBMIT_FULLEXPENSES';
 
 export const informationLogin = (formInformation) => (
   { type: SUBMIT_INFORMATIONS, formInformation });
@@ -27,3 +29,8 @@ export function fetchApiCurrencies() {
     }
   };
 }
+
+export const myAllExpenses = (dispesas) => ({ type: ALLEXPENSES, dispesas });
+
+// export const submitExpenses = (todasDispensas) => (
+//   { type: SUBMIT_FULLEXPENSES, todasDispensas });
