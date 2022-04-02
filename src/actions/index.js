@@ -1,10 +1,15 @@
 // Coloque aqui suas actions
 export const SUBMIT_INFORMATIONS = 'SUBMIT_INFORMATIONS';
+// action user
 export const PROMISE_CURRENCIES = 'PROMISE_CURRENCIES';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const RESPONSE_ERROR = 'RESPONSE_ERROR';
-export const ALLEXPENSES = 'ALLEXPENSES';
-// export const SUBMIT_FULLEXPENSES = 'SUBMIT_FULLEXPENSES';
+// action wallet request api
+// export const ALLEXPENSES = 'ALLEXPENSES';
+// action dispesas wallet
+export const PROMISE_EXPENSES = 'PROMISE_EXPENSES';
+export const REQUEST_EXPENSES = 'REQUEST_EXPENSES';
+// action wallet request api dispesas
 
 export const informationLogin = (formInformation) => (
   { type: SUBMIT_INFORMATIONS, formInformation });
@@ -30,7 +35,17 @@ export function fetchApiCurrencies() {
   };
 }
 
-export const myAllExpenses = (dispesas) => ({ type: ALLEXPENSES, dispesas });
+// export const fetchApiExpenses = (dispesas) => ({ type: ALLEXPENSES, dispesas });
 
-// export const submitExpenses = (todasDispensas) => (
-//   { type: SUBMIT_FULLEXPENSES, todasDispensas });
+const promiseExpenses = () => ({ type: PROMISE_EXPENSES });
+
+const requestExpenses = (data, dispesas) => ({ type: REQUEST_EXPENSES, data, dispesas });
+
+export function myAllExpenses(dispesas) {
+  return async (dispatch) => {
+    dispatch(promiseExpenses());
+    return fetch('https://economia.awesomeapi.com.br/json/all')
+      .then((response) => response.json())
+      .then((data) => dispatch(requestExpenses(data, dispesas)));
+  };
+}

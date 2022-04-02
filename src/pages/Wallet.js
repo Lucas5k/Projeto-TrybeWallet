@@ -10,11 +10,11 @@ class Wallet extends React.Component {
     super();
 
     this.state = {
-      valor: 0,
-      descrição: '',
-      pagamento: '',
-      categoria: '',
-      moeda: '',
+      value: '0',
+      description: '',
+      method: 'Cartão de crédito',
+      tag: 'Lazer',
+      currency: 'USD',
     };
   }
 
@@ -31,21 +31,21 @@ class Wallet extends React.Component {
   }
 
   handleSubmit = () => {
-    const { valor, descrição, pagamento, categoria, moeda } = this.state;
+    const { value, description, method, tag, currency } = this.state;
     const { allExpenses } = this.props;
-    const objectValue = { valor, descrição, pagamento, categoria, moeda };
+    const objectValue = { value, description, method, tag, currency };
     allExpenses(objectValue);
     this.setState({
-      valor: 0,
-      descrição: '',
-      pagamento: '',
-      categoria: '',
-      moeda: '',
+      value: 0,
+      description: '',
+      method: 'Cartão de débito',
+      tag: 'Trabalho',
+      currency: 'USD',
     });
   }
 
   render() {
-    const { valor, descrição, pagamento, categoria, moeda } = this.state;
+    const { value, description, method, tag, currency } = this.state;
     const { currencies } = this.props;
     return (
       <section>
@@ -55,18 +55,18 @@ class Wallet extends React.Component {
           <input
             data-testid="value-input"
             id="valorInput"
-            name="valor"
+            name="value"
             type="number"
-            value={ valor }
+            value={ value }
             onChange={ this.handleChange }
           />
         </label>
         <Select
           onChange={ this.handleChange }
-          value={ moeda }
+          value={ currency }
           label="Moeda: "
-          id="moeda"
-          name="moeda"
+          id="currency"
+          name="currency"
           options={ currencies }
         />
         <label
@@ -76,19 +76,13 @@ class Wallet extends React.Component {
           Método Pagamento:
           <select
             id="pagamento"
-            name="pagamento"
+            name="method"
             onChange={ this.handleChange }
-            value={ pagamento }
+            value={ method }
           >
-            <option>
-              Dinheiro
-            </option>
-            <option>
-              Cartão de crédito
-            </option>
-            <option>
-              Cartão de débito
-            </option>
+            <option>Dinheiro</option>
+            <option>Cartão de crédito</option>
+            <option>Cartão de débito</option>
           </select>
         </label>
         <label
@@ -98,13 +92,11 @@ class Wallet extends React.Component {
           Categoria:
           <select
             id="categoria"
-            value={ categoria }
+            value={ tag }
             onChange={ this.handleChange }
-            name="categoria"
+            name="tag"
           >
-            <option>
-              Alimentação
-            </option>
+            <option>Alimentação</option>
             <option>Lazer</option>
             <option>Trabalho</option>
             <option>Transporte</option>
@@ -116,8 +108,8 @@ class Wallet extends React.Component {
           <input
             data-testid="description-input"
             id="descriptionInput"
-            name="descrição"
-            value={ descrição }
+            name="description"
+            value={ description }
             onChange={ this.handleChange }
           />
         </label>

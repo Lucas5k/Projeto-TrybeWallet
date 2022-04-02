@@ -1,11 +1,11 @@
-import { ALLEXPENSES, PROMISE_CURRENCIES,
-  REQUEST_CURRENCIES, RESPONSE_ERROR } from '../actions';
+import { PROMISE_CURRENCIES,
+  REQUEST_CURRENCIES, REQUEST_EXPENSES, RESPONSE_ERROR } from '../actions';
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
   expenses: [],
   currencies: [],
+  id: 0,
   error: '',
-  // fullExpenses: [],
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -24,16 +24,24 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       error: action.error,
     };
-  case ALLEXPENSES:
+  case REQUEST_EXPENSES: {
+    const newObject = {
+      id: state.id,
+      ...action.dispesas,
+      exchangeRates: action.data,
+    };
     return {
       ...state,
-      expenses: [...state.expenses, action.dispesas],
+      id: state.id + 1,
+      expenses: [...state.expenses, newObject],
     };
-  // case SUBMIT_FULLEXPENSES:
+  }
+  // case SUBMIT_FULLEXPENSES: {
+
   //   return {
   //     ...state,
   //     fullExpenses: [...state.fullExpenses, action.todasDispensas],
-  //   };
+  //   };}
   default:
     return state;
   }

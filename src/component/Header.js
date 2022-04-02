@@ -3,29 +3,46 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
-  componentDidMount() {
-    console.log(this.handleTest());
-  }
+  // handleTest = () => {
+  //   const { expenses } = this.props;
+  //   // if (expenses.length <= 0) {
+  //   //   return 0;
+  //   // }
+  //   const total = expenses.reduce((acc, curr) => {
+  //     const { value, currency, exchangeRates } = curr;
+  //     // const { ask } = curr.exchangeRates;
+  //     const testAsk = Object.values(exchangeRates)
+  //       .find((ele) => ele.code === currency);
+  //     acc += (+testAsk * +value);
+  //     console.log(acc);
+  //     console.log('aqui', testAsk);
+  //     console.log(curr.exchangeRates);
+  //     return +acc;
+  //   }, 0).toFixed(2);
+  //   return reduce;
+  // }
 
-  handleTest = () => {
+  getTotal = () => {
     const { expenses } = this.props;
-    if (expenses.length <= 0) {
-      return '';
-    }
-    const allValues = expenses;
-    const reduce = allValues.reduce((acc, curr) => {
-      return acc[0].valor + curr[0].valor;
-    });
-    return reduce;
+    console.log(expenses);
+    const total = expenses.reduce((acc, curr) => {
+      const { currency, exchangeRates, value } = curr;
+      const { ask } = Object.values(exchangeRates)
+        .find((exchange) => exchange.code === currency);
+      acc += (+ask * +value);
+      return +acc;
+    }, 0).toFixed(2);
+
+    return total;
   }
 
   render() {
     const { email } = this.props;
-    console.log(this.handleTest());
+    const retornoFunção = this.getTotal();
     return (
       <header>
         <p data-testid="email-field">{`Email: ${email} `}</p>
-        <p data-testid="total-field">{`Despesas total: ${'test'} `}</p>
+        <p data-testid="total-field">{retornoFunção}</p>
         <p data-testid="header-currency-field">câmbio: BRL</p>
       </header>
     );
