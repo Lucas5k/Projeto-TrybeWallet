@@ -22,10 +22,9 @@ class Header extends Component {
   //   return reduce;
   // }
 
-  getTotal = () => {
+  resultsExpenses = () => {
     const { expenses } = this.props;
-    console.log(expenses);
-    const total = expenses.reduce((acc, curr) => {
+    const reducer = expenses.reduce((acc, curr) => {
       const { currency, exchangeRates, value } = curr;
       const { ask } = Object.values(exchangeRates)
         .find((exchange) => exchange.code === currency);
@@ -33,32 +32,17 @@ class Header extends Component {
       return +acc;
     }, 0).toFixed(2);
 
-    return total;
+    return reducer;
   }
 
   render() {
     const { email } = this.props;
-    const retornoFunção = this.getTotal();
+    const retornoFunção = this.resultsExpenses();
     return (
       <header>
         <p data-testid="email-field">{`Email: ${email} `}</p>
         <p data-testid="total-field">{retornoFunção}</p>
         <p data-testid="header-currency-field">câmbio: BRL</p>
-        <table>
-          <thead>
-            <tr>
-              <th role="columnheader" scope="col">Descrição</th>
-              <th role="columnheader" scope="col">Tag</th>
-              <th role="columnheader" scope="col">Método de pagamento</th>
-              <th role="columnheader" scope="col">Valor</th>
-              <th role="columnheader" scope="col">Moeda</th>
-              <th role="columnheader" scope="col">Câmbio utilizado</th>
-              <th role="columnheader" scope="col">Valor convertido</th>
-              <th role="columnheader" scope="col">Moeda de conversão</th>
-              <th role="columnheader" scope="col">Editar/Excluir</th>
-            </tr>
-          </thead>
-        </table>
       </header>
     );
   }

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchApiCurrencies, myAllExpenses } from '../actions';
 import Header from '../component/Header';
 import Select from '../component/Select';
+import Cabeçalho from '../component/Cabeçalho';
 
 class Wallet extends React.Component {
   constructor() {
