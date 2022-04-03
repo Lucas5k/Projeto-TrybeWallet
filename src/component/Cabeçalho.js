@@ -81,7 +81,7 @@ class Cabeçalho extends Component {
   }
 
   render() {
-    // const { expenses } = this.props;
+    const { expenses } = this.props;
     const informationName = this.reduceInformationName();
     const informationCoverted = this.reducerCovertedValue();
     const informationAsk = this.reduceInformationAsk();
@@ -103,7 +103,7 @@ class Cabeçalho extends Component {
             <th role="columnheader" scope="col">Moeda de conversão</th>
             <th role="columnheader" scope="col">Editar/Excluir</th>
           </tr>
-          <tr>
+          {/* <tr>
             <td role="cell">{ informationDescription }</td>
             <td role="cell">{ informationTag }</td>
             <td role="cell">{ informationMethod }</td>
@@ -120,29 +120,35 @@ class Cabeçalho extends Component {
                 Excluir
               </button>
             </td>
-          </tr>
-          {/* {
-            expenses.map((ele, i) => (
-              <tr key={ i }>
-                <td role="cell">{ ele.description }</td>
-                <td role="cell">{ ele.tag }</td>
-                <td role="cell">{ ele.method }</td>
-                <td role="cell">{ Number(ele.value).toFixed(2) }</td>
-                <td role="cell">{ informationName }</td>
-                <td role="cell">{ Number(ele.ask).toFixed(2) }</td>
-                <td role="cell">{ informationCoverted }</td>
-                <td role="cell">Real</td>
-                <td role="cell">
-                  <button
-                    type="reset"
-                    data-testid="delete-btn"
-                  >
-                    Excluir
-                  </button>
-                </td>
-              </tr>
-            ))
-          } */}
+          </tr> */}
+          {
+            expenses.map((element, i) => {
+              const { currency, exchangeRates, value } = element;
+              const { name, ask } = Object.values(exchangeRates)
+                .find((exchange) => exchange.code === currency);
+              const sum = (ask * value);
+              return (
+                <tr key={ i }>
+                  <td role="cell">{ element.description }</td>
+                  <td role="cell">{ element.tag }</td>
+                  <td role="cell">{ element.method }</td>
+                  <td role="cell">{ Number(element.value).toFixed(2) }</td>
+                  <td role="cell">{ name }</td>
+                  <td role="cell">{ Number(ask).toFixed(2) }</td>
+                  <td role="cell">{ Number(sum).toFixed(2) }</td>
+                  <td role="cell">Real</td>
+                  <td role="cell">
+                    <button
+                      type="reset"
+                      data-testid="delete-btn"
+                    >
+                      Excluir
+                    </button>
+                  </td>
+                </tr>
+              );
+            }, '')
+          }
         </thead>
       </table>
     );
