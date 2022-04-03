@@ -44,6 +44,21 @@ class Header extends Component {
         <p data-testid="email-field">{`Email: ${email} `}</p>
         <p data-testid="total-field">{retornoFunção}</p>
         <p data-testid="header-currency-field">câmbio: BRL</p>
+        <table>
+          <thead>
+            <tr>
+              <th role="columnheader" scope="col">Descrição</th>
+              <th role="columnheader" scope="col">Tag</th>
+              <th role="columnheader" scope="col">Método de pagamento</th>
+              <th role="columnheader" scope="col">Valor</th>
+              <th role="columnheader" scope="col">Moeda</th>
+              <th role="columnheader" scope="col">Câmbio utilizado</th>
+              <th role="columnheader" scope="col">Valor convertido</th>
+              <th role="columnheader" scope="col">Moeda de conversão</th>
+              <th role="columnheader" scope="col">Editar/Excluir</th>
+            </tr>
+          </thead>
+        </table>
       </header>
     );
   }
