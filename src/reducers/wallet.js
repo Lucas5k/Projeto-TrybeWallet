@@ -1,4 +1,5 @@
 import { PROMISE_CURRENCIES,
+  REMOVEID,
   REQUEST_CURRENCIES, REQUEST_EXPENSES, RESPONSE_ERROR } from '../actions';
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -36,12 +37,12 @@ const wallet = (state = INITIAL_STATE, action) => {
       expenses: [...state.expenses, newObject],
     };
   }
-  // case SUBMIT_FULLEXPENSES: {
-
-  //   return {
-  //     ...state,
-  //     fullExpenses: [...state.fullExpenses, action.todasDispensas],
-  //   };}
+  case REMOVEID:
+    return {
+      ...state,
+      expenses: state.expenses
+        .filter(({ id }) => id !== action.state),
+    };
   default:
     return state;
   }

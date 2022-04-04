@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeExpenses } from '../actions';
 
 class Cabeçalho extends Component {
   // reduceInformationName = () => {
@@ -81,7 +82,7 @@ class Cabeçalho extends Component {
   // }
 
   render() {
-    const { expenses } = this.props;
+    const { expenses, removeItem } = this.props;
     return (
       <table>
         <thead>
@@ -97,13 +98,13 @@ class Cabeçalho extends Component {
             <th role="columnheader" scope="col">Editar/Excluir</th>
           </tr>
           {
-            expenses.map((element, i) => {
-              const { currency, exchangeRates, value } = element;
+            expenses.map((element) => {
+              const { currency, exchangeRates, value, id } = element;
               const { name, ask } = Object.values(exchangeRates)
                 .find((exchange) => exchange.code === currency);
               const sum = (ask * value);
               return (
-                <tr key={ i }>
+                <tr key={ id }>
                   <td role="cell">{ element.description }</td>
                   <td role="cell">{ element.tag }</td>
                   <td role="cell">{ element.method }</td>
@@ -114,8 +115,10 @@ class Cabeçalho extends Component {
                   <td role="cell">Real</td>
                   <td role="cell">
                     <button
-                      type="reset"
+                      type="button"
+                      key={ id }
                       data-testid="delete-btn"
+                      onClick={ () => removeItem(id) }
                     >
                       Excluir
                     </button>
@@ -134,8 +137,13 @@ const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  removeItem: (id) => dispatch(removeExpenses(id)),
+});
+
 Cabeçalho.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
+  removeItem: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Cabeçalho);
+export default connect(mapStateToProps, mapDispatchToProps)(Cabeçalho);

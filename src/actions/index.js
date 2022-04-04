@@ -5,7 +5,7 @@ export const PROMISE_CURRENCIES = 'PROMISE_CURRENCIES';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const RESPONSE_ERROR = 'RESPONSE_ERROR';
 // action wallet request api
-// export const ALLEXPENSES = 'ALLEXPENSES';
+export const REMOVEID = 'REMOVEID';
 // action dispesas wallet
 export const PROMISE_EXPENSES = 'PROMISE_EXPENSES';
 export const REQUEST_EXPENSES = 'REQUEST_EXPENSES';
@@ -35,8 +35,6 @@ export function fetchApiCurrencies() {
   };
 }
 
-// export const fetchApiExpenses = (dispesas) => ({ type: ALLEXPENSES, dispesas });
-
 const promiseExpenses = () => ({ type: PROMISE_EXPENSES });
 
 const requestExpenses = (data, dispesas) => ({ type: REQUEST_EXPENSES, data, dispesas });
@@ -49,3 +47,5 @@ export function myAllExpenses(dispesas) {
       .then((data) => dispatch(requestExpenses(data, dispesas)));
   };
 }
+
+export const removeExpenses = (state) => ({ type: REMOVEID, state });
