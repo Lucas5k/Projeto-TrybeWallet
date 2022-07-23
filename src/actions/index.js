@@ -6,6 +6,7 @@ export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const RESPONSE_ERROR = 'RESPONSE_ERROR';
 // action wallet request api
 export const REMOVEID = 'REMOVEID';
+export const ENABLED_BUTTON = 'ENABLED_BUTTON';
 // action dispesas wallet
 export const PROMISE_EXPENSES = 'PROMISE_EXPENSES';
 export const REQUEST_EXPENSES = 'REQUEST_EXPENSES';
@@ -49,3 +50,5 @@ export function myAllExpenses(dispesas) {
 }
 
 export const removeExpenses = (state) => ({ type: REMOVEID, state });
+
+export const enabledButton = (state) => ({ type: ENABLED_BUTTON, state });

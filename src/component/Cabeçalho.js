@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeExpenses } from '../actions';
+import { enabledButton, removeExpenses } from '../actions';
 
 class Cabeçalho extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      button: true,
+    };
+  }
   // reduceInformationName = () => {
   //   const { expenses } = this.props;
   //   // const resultReduce = expenses.reduce((_acc, element) => {
@@ -81,6 +88,17 @@ class Cabeçalho extends Component {
   //   return result;
   // }
 
+  handleValidationClick = () => {
+    const { editItem } = this.props;
+    const { button } = this.state;
+    if (button === true) {
+      this.setState({ button: false });
+    } else {
+      this.setState({ button: true });
+    }
+    editItem(button);
+  }
+
   render() {
     const { expenses, removeItem } = this.props;
     return (
@@ -116,6 +134,13 @@ class Cabeçalho extends Component {
                   <td role="cell">
                     <button
                       type="button"
+                      data-testid="edit-btn"
+                      onClick={ this.handleValidationClick }
+                    >
+                      Editar
+                    </button>
+                    <button
+                      type="button"
                       key={ id }
                       data-testid="delete-btn"
                       onClick={ () => removeItem(id) }
@@ -139,11 +164,13 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   removeItem: (id) => dispatch(removeExpenses(id)),
+  editItem: (id) => dispatch(enabledButton(id)),
 });
 
 Cabeçalho.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeItem: PropTypes.func.isRequired,
+  editItem: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cabeçalho);

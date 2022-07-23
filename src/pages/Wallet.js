@@ -6,6 +6,7 @@ import Header from '../component/Header';
 import Select from '../component/Select';
 import Cabeçalho from '../component/Cabeçalho';
 
+const CartãoDébito = 'Cartão de débito';
 class Wallet extends React.Component {
   constructor() {
     super();
@@ -39,7 +40,21 @@ class Wallet extends React.Component {
     this.setState({
       value: 0,
       description: '',
-      method: 'Cartão de débito',
+      method: CartãoDébito,
+      tag: 'Trabalho',
+      currency: 'USD',
+    });
+  }
+
+  handleUpdateSubmit = () => {
+    const { value, description, method, tag, currency } = this.state;
+    const objectValue = { value, description, method, tag, currency };
+    const { allExpenses } = this.props;
+    allExpenses(objectValue);
+    this.setState({
+      value: 0,
+      description: '',
+      method: CartãoDébito,
       tag: 'Trabalho',
       currency: 'USD',
     });
@@ -47,7 +62,7 @@ class Wallet extends React.Component {
 
   render() {
     const { value, description, method, tag, currency } = this.state;
-    const { currencies } = this.props;
+    const { currencies, enabledButton } = this.props;
     return (
       <section>
         <Header />
@@ -120,6 +135,13 @@ class Wallet extends React.Component {
         >
           Adicionar despesa
         </button>
+        <button
+          type="submit"
+          disabled={ enabledButton }
+          onClick={ this.handleUpdateSubmit }
+        >
+          Editar despesa
+        </button>
         <Cabeçalho />
       </section>
     );
@@ -133,12 +155,14 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
+  enabledButton: state.wallet.button,
 });
 
 Wallet.propTypes = {
   fetchResultsApi: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   allExpenses: PropTypes.func.isRequired,
+  enabledButton: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
