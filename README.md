@@ -6,7 +6,7 @@
 <p>git clone git@github.com:Lucas5k/Projeto-TrybeWallet.git</p>
 
 - Entre no arquivo do projeto
-<p>cd Projeto-frontend-online-store</p>
+<p>cd Projeto-TrybeWallet</p>
 
 - Instale as dependências
 <p>npm install</p>
@@ -15,7 +15,7 @@
 <p>npm start</p>
 
 Página Rodando na web
-<a href="https://projeto-trivia-sage.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
+<a href="https://projeto-trybe-wallet.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
 para ver a versão final do nosso projeto no seu navegador.
 
 <h2>Sobre o Projeto</h2>
