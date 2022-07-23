@@ -3,7 +3,7 @@
 <h1>Como acessar na sua máquina</h1>
 
 - Clone o repositório
-<p>git clone git@github.com:Lucas5k/Projeto-Trivia.git</p>
+<p>git clone git@github.com:Lucas5k/Projeto-TrybeWallet.git</p>
 
 - Entre no arquivo do projeto
 <p>cd Projeto-frontend-online-store</p>
