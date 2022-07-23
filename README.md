@@ -19,6 +19,11 @@ Página Rodando na web
 para ver a versão final do nosso projeto no seu navegador.
 
 <h2>Sobre o Projeto</h2>
-<p>Neste projeto desenvolvemos um jogo de perguntas e respostas baseado no jogo Trivia (tipo um show do milhão americano rs) utilizando React e Redux, desenvolvendo em grupo suas funcionalidades de acordo com as demandas definidas em um quadro Kanban.</p>
+<p>Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas,
+ao utilizar essa aplicação um usuário deverá ser capaz de:</p>
+
+- Adicionar, remover e editar um gasto;
+- Visualizar uma tabelas com seus gastos;
+- Visualizar o total de gastos convertidos para uma moeda de escolha;
 
 Projeto feito individualmente!
