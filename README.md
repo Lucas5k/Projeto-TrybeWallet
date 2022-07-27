@@ -15,7 +15,7 @@
 <p>npm start</p>
 
 Página Rodando na web
-<a href="https://projeto-trybe-wallet.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
+<a href="https://projeto-trybe-wallet.vercel.app/">Clique aqui</a>
 para ver a versão final do nosso projeto no seu navegador.
 
 <h2>Sobre o Projeto</h2>
