@@ -19,10 +19,10 @@ Página Rodando na web
 para ver a versão final do nosso projeto no seu navegador.
 
 <h2>Sobre o Projeto</h2>
-<p>Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas,
+<p>Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
 ao utilizar essa aplicação um usuário deverá ser capaz de:</p>
 
-- Adicionar, remover e editar um gasto;
+- Adicionar, remover um gasto;
 - Visualizar uma tabelas com seus gastos;
 - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
