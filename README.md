@@ -1,8 +1,8 @@
 # Projeto-TrybeWallet
 
 ## :memo: Descrição
-Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
-e fazer a conversão para a moeda de escolha!
+<p>Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
+e fazer a conversão para a moeda de escolha!</p>
 
 ## :books: Funcionalidades
 * <b>Funcionalidade 1</b>: Adicionar, remover um gasto;
@@ -10,7 +10,8 @@ e fazer a conversão para a moeda de escolha!
 * <b>Funcionalidade 1</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
 
 ## :wrench: Tecnologias utilizadas
-* Tecnologia;
+* React (componente de classe)
+* Redux para fazer o gerenciamento de estado!
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
