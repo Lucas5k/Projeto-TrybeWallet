@@ -5,7 +5,9 @@ Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma cart
 e fazer a conversão para a moeda de escolha!
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
+* <b>Funcionalidade 1</b>: Adicionar, remover um gasto;
+* <b>Funcionalidade 1</b>: Visualizar uma tabelas com seus gastos;
+* <b>Funcionalidade 1</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia;
@@ -37,13 +39,3 @@ npm start
 ## :handshake: Projeto feito individualmente:
 
 <!-- ## :dart: Status do projeto -->
-
-<h2>Sobre o Projeto</h2>
-<p>Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
-ao utilizar essa aplicação um usuário deverá ser capaz de:</p>
-
-- Adicionar, remover um gasto;
-- Visualizar uma tabelas com seus gastos;
-- Visualizar o total de gastos convertidos para uma moeda de escolha;
-
-Projeto feito individualmente!
