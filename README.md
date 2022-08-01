@@ -6,8 +6,8 @@ e fazer a conversão para a moeda de escolha!</p>
 
 ## :books: Funcionalidades
 * <b>Funcionalidade 1</b>: Adicionar, remover um gasto;
-* <b>Funcionalidade 1</b>: Visualizar uma tabelas com seus gastos;
-* <b>Funcionalidade 1</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
+* <b>Funcionalidade 2</b>: Visualizar uma tabelas com seus gastos;
+* <b>Funcionalidade 3</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
 
 ## :wrench: Tecnologias utilizadas
 * React (componente de classe)
