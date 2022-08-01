@@ -16,8 +16,8 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 <linha de comando>
 ```
 
-## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+<!-- ## :soon: Implementação futura
+* O que será implementado na próxima sprint? -->
 
 ## :handshake: Colaboradores
 <table>
@@ -33,7 +33,7 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
   </tr>
 </table>
 
-## :dart: Status do projeto
+<!-- ## :dart: Status do projeto -->
 
 
 <h1>Como acessar na sua máquina</h1>
