@@ -1,0 +1,41 @@
+.Wallet__container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--input-color);
+  display: flex;
+}
+
+.Wallet__box {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px 0px 0.5%;
+  margin-top: 50px;
+}
+
+.Wallet__box input, select, label, p {
+  margin: 0px 0px 0px 0.5%;
+}
+
+.button__box button[type='submit'] {
+  margin-bottom: 600px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 20px;
+  border: 1px solid black;
+  background-color: var(--accent-color);
+  border-radius: 9px;
+  cursor: pointer;
+  color: var(--white-color);
+  outline: none;
+  font-size: 18px;
+}
+
+.Wallet__box input, select {
+  background-color: var(--second-color);
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid;
+  width: 100%;
+}
