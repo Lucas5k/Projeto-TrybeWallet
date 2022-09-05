@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import styled from '../styled/Header.module.css';
 
 class Header extends Component {
-  // handleTest = () => {
-  //   const { expenses } = this.props;
-  //   // if (expenses.length <= 0) {
-  //   //   return 0;
-  //   // }
-  //   const total = expenses.reduce((acc, curr) => {
-  //     const { value, currency, exchangeRates } = curr;
-  //     // const { ask } = curr.exchangeRates;
-  //     const testAsk = Object.values(exchangeRates)
-  //       .find((ele) => ele.code === currency);
-  //     acc += (+testAsk * +value);
-  //     console.log(acc);
-  //     console.log('aqui', testAsk);
-  //     console.log(curr.exchangeRates);
-  //     return +acc;
-  //   }, 0).toFixed(2);
-  //   return reduce;
-  // }
+  constructor() {
+    super();
+
+    this.state = {
+      redirect: false,
+    };
+  }
 
   resultsExpenses = () => {
     const { expenses } = this.props;
@@ -35,15 +26,31 @@ class Header extends Component {
     return reducer;
   }
 
+  handleGoBack = () => {
+    this.setState({ redirect: true });
+  }
+
   render() {
     const { email } = this.props;
+    const { redirect } = this.state;
+    if (redirect) return <Redirect to="/" />;
     const retornoFunção = this.resultsExpenses();
     return (
-      <header>
-        <p data-testid="email-field">{`Email: ${email} `}</p>
-        <p data-testid="total-field">{retornoFunção}</p>
-        <p data-testid="header-currency-field">câmbio: BRL</p>
-      </header>
+      <section className={ styled.Header__container }>
+        <section className={ styled.Header__totalAndCambio }>
+          <p data-testid="total-field">{`Total: ${retornoFunção}`}</p>
+          <p data-testid="header-currency-field">câmbio: BRL</p>
+        </section>
+        <section className={ styled.Header__emailAndVoltar }>
+          <p data-testid="email-field">{`Email: ${email} `}</p>
+          <button
+            type="button"
+            onClick={ this.handleGoBack }
+          >
+            Sair
+          </button>
+        </section>
+      </section>
     );
   }
 }

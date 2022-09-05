@@ -1,0 +1,29 @@
+.Header__container {
+  width: 100%;
+  background-color: var(--second-color);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header__totalAndCambio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0px 0px 0px 1.4%;
+}
+
+.Header__emailAndVoltar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0px 1.5% 0px 0px;
+}
+
+.Header__container button {
+  border: 1px solid;
+  outline: none;
+  border-radius: var(--border);
+  cursor: pointer;
+  background-color: var(--white-color);
+}
