@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-h1 {
+.Login__box h1 {
   color: var(--white-color) ;
   font-size: 50px;
 }
@@ -21,16 +21,16 @@ h1 {
   flex-direction: column;
 }
 
-label {
+.Login__box label {
   margin-bottom: 25px;
   width: 90%;
 }
 
-h1 {
+.Login__box h1 {
   margin-bottom: 55px;
 }
 
-input[type='email'], input[name='password'] {
+.Login__box input[type='email'], input[name='password'] {
   padding: 12px;
   background-color: var(--second-color);
   outline: none;
@@ -41,7 +41,7 @@ input[type='email'], input[name='password'] {
   position: relative;
 }
 
-input::placeholder {
+.Login__box input::placeholder {
   color: var(--input-color)
 }
 
