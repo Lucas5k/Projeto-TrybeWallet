@@ -1,7 +1,7 @@
 # Projeto-TrybeWallet
 
 ## :memo: Descrição
-<p>Esse foi meu sexto projeto no modúlo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
+<p>Esse foi meu sexto projeto no módulo de front-end, No mesmo desenvolvi uma carteira de controle de gastos com conversor de moedas internacionais,
 e fazer a conversão para a moeda de escolha!</p>
 
 ## :books: Funcionalidades
