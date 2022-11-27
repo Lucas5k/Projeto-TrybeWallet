@@ -9,7 +9,7 @@ e fazer a conversão para a moeda de escolha!</p>
 * <b>Funcionalidade 2</b>: Visualizar uma tabelas com seus gastos;
 * <b>Funcionalidade 3</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
 
-## :wrench: Tecnologias utilizadas
+## :wrench: <h3>Tecnologias utilizadas</h3>
 * React (componente de classe)
 * Redux para fazer o gerenciamento de estado!
 
