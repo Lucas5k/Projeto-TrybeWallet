@@ -5,11 +5,11 @@
 e fazer a conversão para a moeda de escolha!</p>
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: Adicionar, remover um gasto;
-* <b>Funcionalidade 2</b>: Visualizar uma tabelas com seus gastos;
-* <b>Funcionalidade 3</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;
+<ol><b>Funcionalidade 1</b>: Adicionar, remover um gasto;</ol>
+<ol><b>Funcionalidade 2</b>: Visualizar uma tabelas com seus gastos;</ol>
+<ol><b>Funcionalidade 3</b>: Visualizar o total de gastos convertidos para uma moeda de escolha;</ol>
 
-## :wrench: <h3>Tecnologias utilizadas</h3>
+## <h3>:wrench: Tecnologias utilizadas</h3>
 * React (componente de classe)
 * Redux para fazer o gerenciamento de estado!
 
